@@ -36,7 +36,6 @@ public class ShootController : MonoBehaviour
     {
         ShootDir = ShootPos.right;
         Transform bulletTransform = Instantiate(pfBullet, ShootPos.position, Quaternion.Euler(0, 0, LookAngle));
-
         bulletTransform.GetComponent<Bullet>().Setup(ShootDir);
     }
 }
