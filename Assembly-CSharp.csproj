@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32D0602F-1E6F-084D-B2AD-E9FAF79A17F0}</ProjectGuid>
+    <ProjectGuid>{EDD43F65-0BD9-D172-A033-527043AFFB12}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\ShootController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
