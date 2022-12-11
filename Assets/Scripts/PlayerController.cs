@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     
     private Rigidbody2D rb;
-    private Animator anim;
-    [SerializeField] float speed;
+    public Animator anim;
+    public float speed = 5f;
     private Vector2 movementInput;
 
     private void Awake()
@@ -49,15 +49,9 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        float Horizontal = Input.GetAxisRaw("Horizontal"); //key inputs (could be WASD or arrow keys)
-        float Vertical = Input.GetAxisRaw("Vertical");
-
-        if (Horizontal == 0 && Vertical == 0)
-        {
-            rb.velocity = new Vector2(0, 0);
-            return;
-        }
-        movementInput = new Vector2(Horizontal, Vertical);
+        movementInput.x = Input.GetAxisRaw("Horizontal"); //key inputs (could be WASD or arrow keys)
+        movementInput.y = Input.GetAxisRaw("Vertical");
+        
         rb.velocity = movementInput * speed * Time.fixedDeltaTime; //moves player
     }
 
@@ -65,5 +59,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("MovementX", movementInput.x);
         anim.SetFloat("MovementY", movementInput.y);
+        anim.SetFloat("Speed", movementInput.sqrMagnitude);
     }
 }
