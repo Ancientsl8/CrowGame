@@ -8,6 +8,8 @@ public class ShootController : MonoBehaviour
     [SerializeField] Transform ShootPos;
     Vector2 lookDir, ShootDir;
     float LookAngle;
+    float fireRate = 1.0f;
+    float nextFire = 0;
     private void Awake()
     {
 
@@ -25,9 +27,9 @@ public class ShootController : MonoBehaviour
         LookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
         ShootPos.rotation = Quaternion.Euler(0, 0, LookAngle);
-        Debug.Log(LookAngle);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && nextFire < Time.time)
         {
+            nextFire = fireRate + Time.time;
             Shoot();
         }
     }
