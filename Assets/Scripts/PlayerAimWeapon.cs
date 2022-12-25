@@ -9,6 +9,8 @@ public class PlayerAimWeapon : MonoBehaviour
     public Vector3 GunEndPointPosition;
     [SerializeField] private Transform AimGunEndpointTransform;
     [SerializeField] private Transform pfBullet;
+    private float nextFire = 0f;
+    private float fireRate = 0.4f;
 
     private void Awake()
     {
@@ -23,11 +25,10 @@ public class PlayerAimWeapon : MonoBehaviour
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         aimTransform.eulerAngles = new Vector3(0, 0, angle);
-        Debug.Log(angle);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && nextFire < Time.time)
         {
-            Debug.Log("Yes");
+            nextFire = Time.time + fireRate;
             Shoot();
         }
     }

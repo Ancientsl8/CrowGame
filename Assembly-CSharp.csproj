@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\WaveSpawner.cs" />
+    <Compile Include="Assets\Scripts\PlayerAimWeapon.cs" />
     <Compile Include="Assets\Scripts\ShootController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\PlayerAimWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
