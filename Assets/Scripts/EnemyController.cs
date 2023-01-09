@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     public Objective obj;
     [SerializeField]int targetRand;
     [SerializeField]float speed;
+    [SerializeField] private Transform pfPowerUpSpread;
+    [SerializeField] private Transform pfPowerUpSpeed;
+    [SerializeField] private Transform pfPowerUpFireRate;
     float step;
 
     private void Awake()
@@ -39,5 +42,23 @@ public class EnemyController : MonoBehaviour
         }
         targetRand = Random.Range(0, 3);
         transform.position = Vector3.MoveTowards(transform.position, obj.Objectives[targetRand].transform.position, step);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            DropItem();
+        }
+    }
+
+    void DropItem()
+    {
+        int ItemDropChance;
+        ItemDropChance = Random.Range(1, 100);
+        if(ItemDropChance > 60)
+        {
+            Instantiate(pfPowerUpSpread, this.transform.position, Quaternion.identity);
+        }
     }
 }
