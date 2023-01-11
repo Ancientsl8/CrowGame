@@ -108,12 +108,12 @@ TextureImporter:
       name: Classic Crow_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 425
-        width: 430
-        height: 475
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3
+        y: 440
+        width: 418
+        height: 403
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: Classic Crow_1
       rect:
         serializedVersion: 2
-        x: 436
-        y: 425
-        width: 464
-        height: 475
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 435
+        y: 466
+        width: 462
+        height: 226
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Classic Crow_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 426
-        height: 429
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 10
+        y: 103
+        width: 398
+        height: 231
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Classic Crow_3
       rect:
         serializedVersion: 2
-        x: 433
-        y: 0
-        width: 467
-        height: 424
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 484
+        y: 102
+        width: 402
+        height: 229
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

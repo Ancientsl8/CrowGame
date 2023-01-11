@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084433680484322501}
   - component: {fileID: 5747964657182267426}
+  - component: {fileID: 6942569762859308481}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6942569762859308481
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490452488438655156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a0e880e73070254b908bf59e72c5f0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7938267395334152944
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,9 +153,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47200012, y: -0.89071214}
+  m_Offset: {x: -0.5, y: 1.41}
   serializedVersion: 2
-  m_Radius: 0.9107437
+  m_Radius: 0.96
 --- !u!50 &7952505665937563422
 Rigidbody2D:
   serializedVersion: 4
@@ -171,7 +192,7 @@ MonoBehaviour:
   obj:
     Objectives: []
   targetRand: 0
-  speed: 4
+  speed: 5
   pfPowerUpSpread: {fileID: 17269549933507551, guid: 39eaff0677ae1ed4fac291b85316e291, type: 3}
   pfPowerUpSpeed: {fileID: 8762045788174597849, guid: bc364382d87e1b74ab912464b3e651bc, type: 3}
   pfPowerUpFireRate: {fileID: 4102009001998221725, guid: dd47026ad1b797b4b840c80907a695ce, type: 3}

@@ -48,7 +48,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.39867234, y: -0.82226205}
+  m_Offset: {x: -0.39867234, y: 1.45}
   serializedVersion: 2
   m_Radius: 1.2475111
 --- !u!50 &7051111547133407167
@@ -87,7 +87,7 @@ MonoBehaviour:
   obj:
     Objectives: []
   targetRand: 0
-  speed: 6
+  speed: 7
   pfPowerUpSpread: {fileID: 17269549933507551, guid: 39eaff0677ae1ed4fac291b85316e291, type: 3}
   pfPowerUpSpeed: {fileID: 8762045788174597849, guid: bc364382d87e1b74ab912464b3e651bc, type: 3}
   pfPowerUpFireRate: {fileID: 4102009001998221725, guid: dd47026ad1b797b4b840c80907a695ce, type: 3}
@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4625525875883738024}
   - component: {fileID: 4105397692146908505}
+  - component: {fileID: 672564869995775825}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -175,3 +176,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &672564869995775825
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450787919221647170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59c26f56bcb6d984bac06c5a57dbf510, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
