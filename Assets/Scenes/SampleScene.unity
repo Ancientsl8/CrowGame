@@ -318,14 +318,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355561794}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1.8, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716126484}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &355561796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff413355c0f23104fa990d9a7ed6d01f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1521,8 +1521,22 @@ MonoBehaviour:
     - {fileID: 3077753717318713356, guid: f3f8eef78b6ff654d924409550117471, type: 3}
     - {fileID: 2420118905108685055, guid: 4ae28e3ce2176ba4e9ca60021e1a58ba, type: 3}
     SpawnInterval: 2
+  - waveName: Wave 3
+    noOfenemies: 9
+    typeOfEnemies:
+    - {fileID: 7938267395334152944, guid: 38e499e60027be1479b147bde379e43b, type: 3}
+    - {fileID: 3077753717318713356, guid: f3f8eef78b6ff654d924409550117471, type: 3}
+    - {fileID: 2420118905108685055, guid: 4ae28e3ce2176ba4e9ca60021e1a58ba, type: 3}
+    SpawnInterval: 1
+  - waveName: Wave 4
+    noOfenemies: 11
+    typeOfEnemies:
+    - {fileID: 7938267395334152944, guid: 38e499e60027be1479b147bde379e43b, type: 3}
+    - {fileID: 3077753717318713356, guid: f3f8eef78b6ff654d924409550117471, type: 3}
+    - {fileID: 2420118905108685055, guid: 4ae28e3ce2176ba4e9ca60021e1a58ba, type: 3}
+    SpawnInterval: 1
   - waveName: Final Wave
-    noOfenemies: 7
+    noOfenemies: 13
     typeOfEnemies:
     - {fileID: 7938267395334152944, guid: 38e499e60027be1479b147bde379e43b, type: 3}
     - {fileID: 3077753717318713356, guid: f3f8eef78b6ff654d924409550117471, type: 3}
