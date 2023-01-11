@@ -5,31 +5,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float moveY;
-    private float moveX;
-    [SerializeField] float speed;
-    Vector3 moveDir;
+    
     private Rigidbody2D rb;
+    public Animator anim;
+    public float speed = 5f;
+    private Vector2 movementInput;
 
     private void Awake()
     {
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // ||| WARNING SPAGHETTI CODE INBOUND AVERT YOUR EYES IF YOU ARE A SEASONED PROGRAMMER! |||
-        moveX = 0;
-        moveY = 0;
+        //moveX = 0;
+        //moveY = 0;
 
         //Gets movement Input
-       if (Input.GetKey(KeyCode.W))
+       /*if (Input.GetKey(KeyCode.W))
         {
             moveY = 1;
         }
@@ -46,12 +42,23 @@ public class PlayerController : MonoBehaviour
             moveX = -1;
         }
         //Moves Player
-        moveDir = new Vector3(moveX, moveY).normalized;
+        //moveDir = new Vector3(moveX, moveY).normalized;*/
+        Move();
+        Animate();
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
-        //moves player
-        rb.velocity = moveDir * speed;
+        movementInput.x = Input.GetAxisRaw("Horizontal"); //key inputs (could be WASD or arrow keys)
+        movementInput.y = Input.GetAxisRaw("Vertical");
+        
+        rb.velocity = movementInput * speed * Time.fixedDeltaTime; //moves player
+    }
+
+    private void Animate()
+    {
+        anim.SetFloat("MovementX", movementInput.x);
+        anim.SetFloat("MovementY", movementInput.y);
+        anim.SetFloat("Speed", movementInput.sqrMagnitude);
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5383677634452955371}
   - component: {fileID: 6105097193440516605}
   - component: {fileID: 7051111547133407167}
+  - component: {fileID: -4779068852359442088}
   m_Layer: 0
   m_Name: EnemyType3
   m_TagString: Enemy
@@ -47,9 +48,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.39867234, y: -0.82226205}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2475111
 --- !u!50 &7051111547133407167
 Rigidbody2D:
   serializedVersion: 4
@@ -71,6 +72,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4779068852359442088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420118905108685055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4164e789e67c65545bbdf9ddddc452f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj:
+    Objectives: []
+  targetRand: 0
+  speed: 6
+  pfPowerUpSpread: {fileID: 17269549933507551, guid: 39eaff0677ae1ed4fac291b85316e291, type: 3}
+  pfPowerUpSpeed: {fileID: 8762045788174597849, guid: bc364382d87e1b74ab912464b3e651bc, type: 3}
+  pfPowerUpFireRate: {fileID: 4102009001998221725, guid: dd47026ad1b797b4b840c80907a695ce, type: 3}
 --- !u!1 &7450787919221647170
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,8 +164,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.7924528, g: 0.16073336, b: 0.16073336, a: 1}
+  m_Sprite: {fileID: 1628733759, guid: 3f90ebaf700fad141a6f7b3b42a68386, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
