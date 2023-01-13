@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     private Vector2 movementInput;
 
+    public GameObject pauseMenu;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+    void Start()
+    {
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -45,6 +52,9 @@ public class PlayerController : MonoBehaviour
         //moveDir = new Vector3(moveX, moveY).normalized;*/
         Move();
         Animate();
+
+        if (Input.GetKeyDown(KeyCode.Escape)){ PauseMenu(); }
+
     }
 
     private void Move()
@@ -60,5 +70,21 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("MovementX", movementInput.x);
         anim.SetFloat("MovementY", movementInput.y);
         anim.SetFloat("Speed", movementInput.sqrMagnitude);
+    }
+
+    //Pause Menu
+    public void PauseMenu(){
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeGame(){
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
+    public void BackToMainMenu(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
