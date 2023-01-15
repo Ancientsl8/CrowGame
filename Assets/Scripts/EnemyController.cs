@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform pfPowerUpFireRate;
     float step;
 
+    [SerializeField] private AudioSource crowSoundEffect;
+
     private void Awake()
     {
 
@@ -35,6 +37,7 @@ public class EnemyController : MonoBehaviour
 
     void moveToTarget()
     {
+        crowSoundEffect.Play();
         step = speed * Time.deltaTime;
         if(obj.Objectives.Length == 0)
         {
