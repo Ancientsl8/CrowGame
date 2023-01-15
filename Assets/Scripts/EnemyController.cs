@@ -16,6 +16,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform pfPowerUpSpeed;
     [SerializeField] private Transform pfPowerUpFireRate;
     float step;
+    private Vector3 MugpieStrafe;
+    float timer = 2;
+    int Strafecount;
 
     private void Awake()
     {
@@ -30,7 +33,55 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveToTarget();
+        //Sets a timer for the Mugpie Crow
+        if(timer > -2)
+        {
+            timer -= Time.deltaTime;
+        }
+        //After counter reaches 2, Mugpie crow acts like regular crow
+        if (gameObject.tag == "Mugpie" && Strafecount != 2)
+        {
+            //Mugpie Crow strafes up and right for 2 seconds
+            if (timer > 0)
+            {
+                if(gameObject.transform.position.x < 0)
+                {
+                    MugpieStrafe = new Vector3(1, 1);
+                }
+                else
+                {
+                    MugpieStrafe = new Vector3(-1, 1);
+                }
+            }
+            //Mugpie Crow strafes down and right for 2 seconds
+            else if (timer < 0)
+            {
+                if (gameObject.transform.position.x < 0)
+                {
+                    MugpieStrafe = new Vector3(1, -1);
+                }
+                else
+                {
+                    MugpieStrafe = new Vector3(-1, -1);
+                }
+            }
+            MugpieMove(MugpieStrafe);
+        }
+        else
+        {
+            moveToTarget();
+        }
+    }
+
+    void MugpieMove(Vector3 Die)
+    {
+        transform.position += Die * speed * Time.deltaTime;
+        //returns mugpie crow to state 1, and increments the counter by 1
+        if (timer < -2)
+        {
+            timer = 2;
+            Strafecount++;
+        }
     }
 
     void moveToTarget()
@@ -42,23 +93,5 @@ public class EnemyController : MonoBehaviour
         }
         targetRand = Random.Range(0, 3);
         transform.position = Vector3.MoveTowards(transform.position, obj.Objectives[targetRand].transform.position, step);
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Bullet")
-        {
-            DropItem();
-        }
-    }
-
-    void DropItem()
-    {
-        int ItemDropChance;
-        ItemDropChance = Random.Range(1, 100);
-        if(ItemDropChance > 60)
-        {
-            Instantiate(pfPowerUpSpread, this.transform.position, Quaternion.identity);
-        }
     }
 }

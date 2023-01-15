@@ -8,6 +8,10 @@ TagManager:
   - Objective
   - objective
   - Bullet
+  - Spread
+  - Speed
+  - FireRate
+  - Mugpie
   layers:
   - Default
   - TransparentFX

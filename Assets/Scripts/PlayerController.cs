@@ -11,13 +11,14 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public float speed = 5f;
     private Vector2 movementInput;
-
+    PlayerAimWeapon playerAim;
     public GameObject pauseMenu;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerAim = GetComponent<PlayerAimWeapon>();
     }
     void Start()
     {
@@ -70,6 +71,27 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("MovementX", movementInput.x);
         anim.SetFloat("MovementY", movementInput.y);
         anim.SetFloat("Speed", movementInput.sqrMagnitude);
+    }
+
+    //PowerUpSystem
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Spread")
+        {
+            Destroy(collision.gameObject);
+            playerAim.PowerUpSpread();
+        }
+
+        if (collision.gameObject.tag == "Speed")
+        {
+            Destroy(collision.gameObject);
+            speed = 350f;
+        }
+        if (collision.gameObject.tag == "FireRate")
+        {
+            Destroy(collision.gameObject);
+            playerAim.PowerUpFireRate();
+        }
     }
 
     //Pause Menu
